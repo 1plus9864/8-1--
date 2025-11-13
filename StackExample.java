@@ -1,7 +1,10 @@
 import java.util.LinkedList;
 import java.util.List;
 
+import java.util.LinkedList;
+
 class MyStack<T> {
+
     private LinkedList<T> stack;
 
     public MyStack() {
@@ -9,25 +12,25 @@ class MyStack<T> {
     }
 
     public void push(T item) {
-        stack.addLast(item); 
+        // 放在尾端
+        stack.addLast(item);
     }
-    
 
     public T pop() {
         if (stack.isEmpty()) return null;
-        return stack.pop();
+        // 取尾端（真正的 Stack 行為）
+        return stack.removeLast();
     }
 
-    // 检查栈是否为空
     public boolean isEmpty() {
         return stack.isEmpty();
     }
 
-    // 返回栈中的元素数量
     public int size() {
         return stack.size();
     }
 }
+
 
 public class StackExample{
     public static void main(String[] args) {
